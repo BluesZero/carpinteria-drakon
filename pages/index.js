@@ -1,115 +1,79 @@
-import Image from "next/image";
-import { Geist, Geist_Mono } from "next/font/google";
-
-const geistSans = Geist({
-  variable: "--font-geist-sans",
-  subsets: ["latin"],
-});
-
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
-  subsets: ["latin"],
-});
+// --- pages/index.js ---
+import Head from 'next/head';
+import Layout from '../components/Layout';
 
 export default function Home() {
   return (
-    <div
-      className={`${geistSans.className} ${geistMono.className} grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20 font-[family-name:var(--font-geist-sans)]`}
-    >
-      <main className="flex flex-col gap-[32px] row-start-2 items-center sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={180}
-          height={38}
-          priority
-        />
-        <ol className="list-inside list-decimal text-sm/6 text-center sm:text-left font-[family-name:var(--font-geist-mono)]">
-          <li className="mb-2 tracking-[-.01em]">
-            Get started by editing{" "}
-            <code className="bg-black/[.05] dark:bg-white/[.06] px-1 py-0.5 rounded font-[family-name:var(--font-geist-mono)] font-semibold">
-              pages/index.js
-            </code>
-            .
-          </li>
-          <li className="tracking-[-.01em]">
-            Save and see your changes instantly.
-          </li>
-        </ol>
-        <div className="flex gap-4 items-center flex-col sm:flex-row">
+    <Layout>
+      <Head>
+        <title>Carpintería Drakón | Diseño legendario en madera</title>
+        <meta name="description" content="Carpintería Drakón: expertos en diseño y fabricación de muebles a medida e instalaciones profesionales." />
+      </Head>
+
+      {/* Hero section */}
+      <section className="relative bg-gray-950 text-white overflow-hidden">
+        <div className="absolute inset-0">
+          <img
+            src="https://picsum.photos/1600/800?grayscale&blur=1"
+            alt="Fondo Carpintería Drakón"
+            className="w-full h-full object-cover opacity-30"
+          />
+        </div>
+        <div className="relative z-10 max-w-3xl mx-auto px-6 py-28 text-center">
+          <img src="/logo.png" alt="Logo Drakón" className="w-50 mx-auto mb-6 rounded-full" />
+          <h1 className="text-4xl md:text-5xl font-extrabold text-yellow-500 drop-shadow-lg">Diseño legendario en madera</h1>
+          <p className="mt-4 text-lg text-gray-200">Muebles a medida e instalaciones residenciales y comerciales con precisión y carácter.</p>
           <a
-            className="rounded-full border border-solid border-transparent transition-colors flex items-center justify-center bg-foreground text-background gap-2 hover:bg-[#383838] dark:hover:bg-[#ccc] font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 sm:w-auto"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=default-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
+            href="/contacto"
+            className="mt-8 inline-block bg-yellow-500 hover:bg-yellow-400 text-black font-bold py-3 px-6 rounded shadow-md transition"
           >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={20}
-              height={20}
-            />
-            Deploy now
-          </a>
-          <a
-            className="rounded-full border border-solid border-black/[.08] dark:border-white/[.145] transition-colors flex items-center justify-center hover:bg-[#f2f2f2] dark:hover:bg-[#1a1a1a] hover:border-transparent font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 w-full sm:w-auto md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=default-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Read our docs
+            Solicita tu cotización
           </a>
         </div>
-      </main>
-      <footer className="row-start-3 flex gap-[24px] flex-wrap items-center justify-center">
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=default-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/file.svg"
-            alt="File icon"
-            width={16}
-            height={16}
-          />
-          Learn
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=default-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/window.svg"
-            alt="Window icon"
-            width={16}
-            height={16}
-          />
-          Examples
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org?utm_source=create-next-app&utm_medium=default-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/globe.svg"
-            alt="Globe icon"
-            width={16}
-            height={16}
-          />
-          Go to nextjs.org →
-        </a>
-      </footer>
-    </div>
+      </section>
+
+      {/* Sección de bienvenida */}
+      <section className="bg-gray-900 text-white py-20 px-6">
+        <div className="max-w-4xl mx-auto text-center">
+          <h2 className="text-3xl font-bold text-yellow-500 mb-4">Bienvenido a Carpintería Drakón</h2>
+          <p className="text-gray-300 mb-6">
+            En nuestro taller combinamos la tradición artesanal con tecnología moderna para ofrecer piezas únicas, duraderas y hechas a medida.
+          </p>
+          <img src="https://picsum.photos/800/400?random=11" alt="Bienvenida" className="mx-auto rounded-lg shadow-lg" />
+        </div>
+      </section>
+
+      {/* Sección resumen de servicios */}
+      <section className="bg-gray-950 text-white py-20 px-6">
+        <div className="max-w-6xl mx-auto">
+          <h2 className="text-3xl font-bold text-yellow-500 text-center mb-12">¿Qué hacemos?</h2>
+          <div className="grid md:grid-cols-3 gap-8">
+            <div className="bg-gray-900 p-6 rounded-lg shadow">
+              <h3 className="text-xl font-semibold text-yellow-400 mb-2">Muebles a medida</h3>
+              <p className="text-gray-400">Desde closets hasta cocinas integrales, diseñamos cada pieza para ajustarse a tus necesidades.</p>
+            </div>
+            <div className="bg-gray-900 p-6 rounded-lg shadow">
+              <h3 className="text-xl font-semibold text-yellow-400 mb-2">Instalaciones integrales</h3>
+              <p className="text-gray-400">Equipamos oficinas, comercios o residencias con soluciones en madera funcionales y modernas.</p>
+            </div>
+            <div className="bg-gray-900 p-6 rounded-lg shadow">
+              <h3 className="text-xl font-semibold text-yellow-400 mb-2">Diseño personalizado</h3>
+              <p className="text-gray-400">Proyectos únicos guiados por tus ideas, con el respaldo de nuestra experiencia en carpintería fina.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Llamado a la acción final */}
+      <section className="bg-yellow-500 text-black py-16 px-6 text-center">
+        <div className="max-w-3xl mx-auto">
+          <h2 className="text-3xl font-extrabold mb-4">¿Listo para iniciar tu proyecto?</h2>
+          <p className="mb-6">Ponte en contacto con nosotros y llevemos tu idea a la realidad con la calidad de Carpintería Drakón.</p>
+          <a href="/contacto" className="inline-block bg-black hover:bg-gray-800 text-yellow-400 font-bold py-3 px-6 rounded transition">
+            Contáctanos ahora
+          </a>
+        </div>
+      </section>
+    </Layout>
   );
 }
