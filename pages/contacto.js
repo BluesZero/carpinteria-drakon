@@ -12,7 +12,7 @@ export default function Contacto() {
             <form className="space-y-4">
               <input type="text" placeholder="Nombre" className="w-full p-3 rounded bg-gray-800 text-white focus:outline-none focus:ring-2 focus:ring-yellow-500" />
               <input type="email" placeholder="Correo electrónico" className="w-full p-3 rounded bg-gray-800 text-white focus:outline-none focus:ring-2 focus:ring-yellow-500" />
-              <textarea placeholder="Mensaje" className="w-full p-3 rounded bg-gray-800 text-white focus:outline-none focus:ring-2 focus:ring-yellow-500" rows="5"></textarea>
+              <textarea placeholder="Mensaje ó envianos un whatsapp 📞 (81) 1071 7913" className="w-full p-3 rounded bg-gray-800 text-white focus:outline-none focus:ring-2 focus:ring-yellow-500" rows="5"></textarea>
               <button type="submit" className="w-full bg-yellow-500 hover:bg-yellow-400 text-black font-bold py-3 px-6 rounded transition">Enviar mensaje</button>
             </form>
 

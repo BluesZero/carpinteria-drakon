@@ -11,14 +11,17 @@ export default function Home() {
       </Head>
 
       {/* Hero section */}
-      <section className="relative bg-gray-950 text-white overflow-hidden">
-        <div className="absolute inset-0">
-          <img
-            src="https://picsum.photos/1600/800?grayscale&blur=1"
-            alt="Fondo Carpintería Drakón"
-            className="w-full h-full object-cover opacity-30"
-          />
-        </div>
+      <section className="relative bg-black text-white overflow-hidden h-[90vh]">
+        <video
+          autoPlay
+          loop
+          muted
+          playsInline
+          className="absolute top-0 left-0 w-full h-full object-cover opacity-30"
+        >
+          <source src="/hero.mp4" type="video/mp4" />
+          Tu navegador no soporta videos HTML5.
+        </video>
         <div className="relative z-10 max-w-3xl mx-auto px-6 py-28 text-center">
           <img src="/logo.png" alt="Logo Drakón" className="w-50 mx-auto mb-6 rounded-full" />
           <h1 className="text-4xl md:text-5xl font-extrabold text-yellow-500 drop-shadow-lg">Diseño legendario en madera</h1>
@@ -39,7 +42,7 @@ export default function Home() {
           <p className="text-gray-300 mb-6">
             En nuestro taller combinamos la tradición artesanal con tecnología moderna para ofrecer piezas únicas, duraderas y hechas a medida.
           </p>
-          <img src="https://picsum.photos/800/400?random=11" alt="Bienvenida" className="mx-auto rounded-lg shadow-lg" />
+          <img src="/2.png" alt="Bienvenida" className="mx-auto rounded-lg shadow-lg" />
         </div>
       </section>
 
@@ -70,7 +73,7 @@ export default function Home() {
           <h2 className="text-3xl font-extrabold mb-4">¿Listo para iniciar tu proyecto?</h2>
           <p className="mb-6">Ponte en contacto con nosotros y llevemos tu idea a la realidad con la calidad de Carpintería Drakón.</p>
           <a href="/contacto" className="inline-block bg-black hover:bg-gray-800 text-yellow-400 font-bold py-3 px-6 rounded transition">
-            Contáctanos ahora
+            Cotizar ahora
           </a>
         </div>
       </section>
